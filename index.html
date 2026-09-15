@@ -796,10 +796,11 @@ const WEDDING_DATE = new Date("2026-10-19T15:00:00+08:00");
 //    (looks like https://docs.google.com/forms/d/e/XXXXXXX/formResponse).
 // 3. To find each entry ID: open the live form, fill it out, click Submit once, then check
 //    the browser's network tab / the resulting URL for entry.123456789=value pairs.
-const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/PASTE_YOUR_FORM_ID/formResponse";
-const ENTRY_NAME = "entry.111111111";
-const ENTRY_ATTENDING = "entry.222222222";
-const ENTRY_MESSAGE = "entry.333333333";
+
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdl_i8jbYl1BCPNvyUIYPJ2Ow4sRxz12EkLL4k011KC2hhsog/formResponse';
+const ENTRY_NAME = 'entry.141717649';
+const ENTRY_ATTENDING = 'entry.993851931';
+const ENTRY_MESSAGE = 'entry.1118148878';
 
 /* ================= NAV ================= */
 const siteNav = document.getElementById('siteNav');
@@ -956,12 +957,6 @@ document.getElementById('addCalendarBtn').addEventListener('click', () => {
   const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Paolo & Pamela's Wedding Celebration")}&dates=${start}/${end}&details=${encodeURIComponent("We can't wait to celebrate with you!")}&location=${encodeURIComponent("Beautéderm Headquarters, Function Room B, Angeles City, Pampanga")}`;
   window.open(url, '_blank');
 });
-
-/* ================= RSVP CONFIGURATION ================= */
-const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdl_i8jbYl1BCPNvyUIYPJ2Ow4sRxz12EkLL4k011KC2hhsog/formResponse';
-const ENTRY_NAME = 'entry.141717649';
-const ENTRY_ATTENDING = 'entry.993851931';
-const ENTRY_MESSAGE = 'entry.1118148878';
 
 /* ================= RSVP FORM ================= */
 let attendingValue = null;
