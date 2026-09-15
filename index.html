@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paolo & Pamela — October 19, 2026</title>
-<meta name="description" content="Join Paolo & Pamela as they say I do — October 19, 2026.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paolo &amp; Pamela — October 19, 2026</title>
+  <meta name="description" content="Join Paolo &amp; Pamela as they say I do — October 19, 2026.">
+
+  <!-- Open Graph Meta Tags for Messenger & Social Media Previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Paolo &amp; Pamela — October 19, 2026" />
+  <meta property="og:description" content="Join Paolo &amp; Pamela as they say I do — October 19, 2026." />
+  <meta property="og:image" content="https://mptanhueco.github.io/WeddingInvitation/Images/bg.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://mptanhueco.github.io/WeddingInvitation/paolo-pamela-wedding.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
 <style>
   :root{
     --berry:#5B1E3A;
@@ -925,7 +936,7 @@
           <figure class="polaroid tilt-c">
             <img src="/WeddingInvitation/Images/grad.jpg" alt="Paolo on graduation day">
             <div class="slot"><span>Photo 03</span><span>4:3</span></div>
-            <figcaption>2021</figcaption>
+            <figcaption>2022</figcaption>
           </figure>
         </div>
         <div class="told">
@@ -942,7 +953,7 @@
           <figure class="polaroid tilt-a">
             <img src="/WeddingInvitation/Images/IMG_6002.JPG" alt="Travelling together">
             <div class="slot"><span>Photo 04</span><span>4:3</span></div>
-            <figcaption>2023</figcaption>
+            <figcaption>2025</figcaption>
           </figure>
         </div>
         <div class="told">
@@ -1164,6 +1175,18 @@
         <h3 style="font-size:1.6rem;">Thank you!</h3>
         <p style="margin-top:10px; opacity:.8;" id="rsvpSuccessMsg">Your RSVP has been received. We can't wait to celebrate with you.</p>
       </div>
+    </div>
+
+    <!-- Guest List / Well Wishes Section Header -->
+    <div class="guest-list-header reveal" style="text-align: center; margin-top: 60px;">
+      <p class="eyebrow">Celebration &amp; Wishes</p>
+      <h3 style="font-size: clamp(1.6rem, 3vw, 2.2rem); margin-top: 5px;">Our Guest List &amp; Messages</h3>
+      <div class="divider">♡</div>
+    </div>
+
+      <!-- RSVP Image Header -->
+    <div class="rsvp-image-container" style="text-align: center; margin-bottom: 25px;">
+      <img src="https://mptanhueco.github.io/WeddingInvitation/Images/guest.jpg" alt="Paolo & Pamela" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px;">
     </div>
   </div>
 </section>
@@ -1417,7 +1440,7 @@ viewToggle.addEventListener('click', (e) => {
   btn.classList.add('active');
   document.querySelectorAll('.map-frame iframe').forEach(f => f.classList.remove('active'));
   const view = btn.dataset.view;
-  document.getElementById(view === 'walk' ? 'mapMap' : view === 'sat' ? 'mapSat' : 'mapWalk').classList.add('active');
+  document.getElementById(view === 'map' ? 'mapMap' : view === 'sat' ? 'mapSat' : 'mapWalk').classList.add('active');
   mapBadge.textContent = badgeLabels[view];
 });
 
