@@ -940,7 +940,7 @@ viewToggle.addEventListener('click', (e) => {
   btn.classList.add('active');
   document.querySelectorAll('.map-frame iframe').forEach(f => f.classList.remove('active'));
   const view = btn.dataset.view;
-  document.getElementById(view === 'map' ? 'mapMap' : view === 'sat' ? 'mapSat' : 'mapWalk').classList.add('active');
+  document.getElementById(view === 'walk' ? 'mapMap' : view === 'sat' ? 'mapSat' : 'mapWalk').classList.add('active');
   mapBadge.textContent = badgeLabels[view];
 });
 
