@@ -611,9 +611,163 @@
 /* ==========================================================================
    END PASTE BLOCK 1
    ========================================================================== */
+
+   .music-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #d4a373;
+  color: #d4a373;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  background-color: #d4a373;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.music-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* Overlay Container (Full Screen) */
+.invitation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #faf5f0; /* Soft wedding beige/cream color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Hide overlay state */
+.invitation-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Overlay Card Content */
+.overlay-card {
+  text-align: center;
+  max-width: 480px;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ebdcd0;
+}
+
+.overlay-sub {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8c7365;
+  margin-bottom: 15px;
+}
+
+.overlay-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  color: #5c4739;
+  margin: 0 0 30px 0;
+  font-weight: normal;
+}
+
+/* Open Invitation Button */
+.open-btn {
+  padding: 14px 32px;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #d4a373;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4);
+  transition: all 0.3s ease;
+}
+
+.open-btn:hover {
+  background-color: #bc8a5f;
+  transform: translateY(-2px);
+}
+
+/* Floating Mute Button (Bottom-Left) */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d4a373;
+  color: #d4a373;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  background-color: #d4a373;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.music-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
 </style>
+
+
 </head>
 <body>
+
+  <!-- Full-Screen Overlay Screen -->
+<div id="invitationOverlay" class="invitation-overlay">
+  <div class="overlay-card">
+    <p class="overlay-sub">You Are Cordially Invited To The Wedding Of</p>
+    <h1 class="overlay-title">Pamela &amp; Paolo</h1>
+    <button id="openInvitationBtn" class="open-btn">Open Invitation</button>
+  </div>
+</div>
+
+<!-- Bottom-Left Mute / Unmute Floating Button -->
+<button id="musicToggleBtn" class="music-btn" aria-label="Toggle Music">
+  <svg id="iconPlaying" class="music-icon" viewBox="0 0 24 24">
+    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+  </svg>
+  <svg id="iconMuted" class="music-icon" viewBox="0 0 24 24" style="display: none;">
+    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+  </svg>
+</button>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="siteNav">
@@ -1094,6 +1248,18 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- Floating Mute / Unmute Button -->
+<button id="musicToggleBtn" class="music-btn" aria-label="Toggle Music">
+  <!-- Speaker Icon (Visible when playing) -->
+  <svg id="iconPlaying" class="music-icon" viewBox="0 0 24 24">
+    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+  </svg>
+  <!-- Muted Icon (Hidden by default) -->
+  <svg id="iconMuted" class="music-icon" viewBox="0 0 24 24" style="display: none;">
+    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+  </svg>
+</button>
+
 <script>
 /* ================= CONFIG ================= */
 // Wedding date/time (Asia/Manila). Edit as needed.
@@ -1412,6 +1578,58 @@ document.querySelectorAll('#story .polaroid img').forEach(img => {
 /* ==========================================================================
    END PASTE BLOCK 3
    ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Load background audio
+  const bgMusic = new Audio('https://mptanhueco.github.io/WeddingInvitation/Assets/bg-music.mp3');
+  bgMusic.loop = true;
+  bgMusic.volume = 0.5; // Ambient 50% volume
+
+  const overlay = document.getElementById('invitationOverlay');
+  const openBtn = document.getElementById('openInvitationBtn');
+  const muteBtn = document.getElementById('musicToggleBtn');
+  const iconPlaying = document.getElementById('iconPlaying');
+  const iconMuted = document.getElementById('iconMuted');
+
+  // Toggle speaker visual icons
+  function updateIcons(isPlaying) {
+    if (isPlaying) {
+      iconPlaying.style.display = 'block';
+      iconMuted.style.display = 'none';
+    } else {
+      iconPlaying.style.display = 'none';
+      iconMuted.style.display = 'block';
+    }
+  }
+
+  // Handle "Open Invitation" Button Click
+  openBtn.addEventListener('click', () => {
+    // Smoothly fade out the overlay screen
+    overlay.classList.add('fade-out');
+
+    // Start background music playback
+    bgMusic.play().then(() => {
+      updateIcons(true);
+    }).catch(err => {
+      console.log("Audio playback failed:", err);
+    });
+  });
+
+  // Handle Mute/Unmute Toggle Button
+  if (muteBtn) {
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      if (bgMusic.paused) {
+        bgMusic.play();
+        updateIcons(true);
+      } else {
+        bgMusic.pause();
+        updateIcons(false);
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>
